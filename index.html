@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Welcome to My Restaurant, where we offer a delightful range of dishes from around the world. Enjoy delicious meals, takeout specials, and more!">
+    <meta name="keywords" content="restaurant, food, takeout, recipes, dining, Indian cuisine">
+    <title>My Restaurant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">mYresTaurEnT <i class="fa-solid fa-fork-knife"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Blogs.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Order.html">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Account.html">Account</a></li>
+                </ul>
+                <a class="btn btn-primary" href="#" role="button" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                <a class="btn btn-primary" href="Register.html" role="button">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container section-spacing">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/bg1.jpg" class="d-block w-100 custom-img" style="height: 350px;" alt="Delicious meals">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Delicious Meals</h5>
+                        <p>Enjoy a variety of cuisines with us.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/bg2.jpg" class="d-block w-100 custom-img" style="height: 350px;" alt="Italian Night">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Italian Night</h5>
+                        <p>Join us for a taste of Italy with our delicious pizzas and pastas!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/bg3.jpg" class="d-block w-100 custom-img" style="height: 350px;" alt="Takeout Specials">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Takeout Specials</h5>
+                        <p>Delicious meals delivered to your door—perfect for cozy nights in.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="container mt-4 section-spacing">
+            <h2 class="text-center">Chef's Corner</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Recipe: Classic Tandoori Chicken</h5>
+                    <p>Join Chef Anil as he shares the secrets to our famous tandoori chicken. Perfectly marinated and grilled, it’s a must-try!</p>
+                    <a href="recipe-tandoori-chicken.html" class="btn btn-primary">View Recipe</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/tanduri-dal.jpg" class="img-fluid" alt="Tandoori Chicken" style="width: 100%; max-width: 400px; height: auto;">
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h5>Recipe: Spicy Paneer Tikka</h5>
+                    <p>Learn how to make our delectable spicy paneer tikka, marinated in a blend of spices and grilled to perfection.</p>
+                    <a href="recipe-paneer-tikka.html" class="btn btn-primary">View Recipe</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/paneer -ikka.jpg" class="img-fluid" alt="Spicy Paneer Tikka" style="width: 100%; max-width: 400px; height: auto;">
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h5>Cooking Tip of the Day</h5>
+                    <p>For the perfect tandoori chicken, marinate the chicken overnight. This allows the spices to penetrate deeply, resulting in a more flavorful dish!</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/cooking-tips.jpg" class="img-fluid"  alt="Cooking Tips">
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4 section-spacing">
+            <h2 class="text-center mb-4">Featured Menu Items</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/french-fries.jpg" class="card-img-top" alt="French Fries">
+                        <div class="card-body">
+                            <h5 class="card-title">French Fries</h5>
+                            <p class="card-text">Crispy golden fries served with a side of ketchup.</p>
+                            <p class="card-text"><strong>Price: $3.99</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/tanduri-dal.jpg" class="card-img-top" alt="Tandoori Dal">
+                        <div class="card-body">
+                            <h5 class="card-title">Tandoori Dal</h5>
+                            <p class="card-text">Rich lentil dish cooked in a traditional tandoor.</p>
+                            <p class="card-text"><strong>Price: $8.99</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/indian-thali.jpg" class="card-img-top" alt="Indian Thali">
+                        <div class="card-body">
+                            <h5 class="card-title">Indian Thali</h5>
+                            <p class="card-text">A complete meal with various Indian dishes served on a platter.</p>
+                            <p class="card-text"><strong>Price: $12.99</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4 section-spacing">
+            <h2 class="text-center mb-4">Order Your Favorite Food</h2>
+            <div class="card text-center border-success">
+                <div class="card-body">
+                    <p class="card-text">Craving something delicious? Choose your favorite dishes from our menu and enjoy them at home. Click the button below to place your order!</p>
+                    <div class="text-center">
+                        <a href="order.html" class="btn btn-success btn-lg">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header border-bottom-0">
+                        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </div>
+                            <div class="text-center">
+                                <p>Don't have an account? <a href="Register.html" class="text-primary">Register here</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-dark text-light mt-4 p-4">
+            <div class="container">
+                <h5 class="text-uppercase">Contact Us</h5>
+                <p>Email: <a href="mailto:contact@myrestaurant.com" class="text-light">contact@myrestaurant.com</a></p>
+                <p>Phone: <a href="tel:+11234567890" class="text-light">(123) 456-7890</a></p>
+                <p>Hours: Mon-Sun 10 AM - 10 PM</p>
+                <div>
+                    <h6>Follow Us</h6>
+                    <a href="#" class="text-light me-2">Facebook</a> |
+                    <a href="#" class="text-light me-2">Instagram</a> |
+                    <a href="#" class="text-light">Twitter</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                // Simple email format validation
+                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                if (!emailPattern.test(email)) {
+                    alert("Please enter a valid email address.");
+                    event.preventDefault(); // Prevent form submission
+                    return;
+                }
+
+                // Ensure password is not empty
+                if (!password) {
+                    alert("Please enter your password.");
+                    event.preventDefault(); // Prevent form submission
+                }
+            });
+
+            const loginModal = document.getElementById('loginModal');
+            loginModal.addEventListener('shown.bs.modal', function () {
+                document.getElementById('email').focus();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef); /* Subtle gradient background */
+        }
+        .navbar {
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-brand {
+            color: #343a40; /* Dark text */
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .search-section {
+            margin-top: 20px; /* Space between navbar and search */
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .back-button {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .testimonial-card {
+    background-color: #f8f9fa; /* Light background color */
+    border: 1px solid #007bff; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: transform 0.2s; /* Smooth scaling effect */
+}
+
+.testimonial-card:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+.card {
+    margin-bottom: 20px; /* Space between cards */
+}
+
+.card-img-top {
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    border-radius: 0.25rem; /* Rounded corners for images */
+}
+    </style>
+</head>
+<body>
+    <!-- Header Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Menu</a>
+        </div>
+    </nav>
+
+    <!-- Back Button in the Right Corner -->
+    <div class="container">
+        <a href="index.html" class="btn btn-secondary mb-3 back-button">Back</a>
+    </div>
+
+    <!-- Search Section -->
+    <div class="container search-section mb-4">
+        <form class="d-flex" onsubmit="return false;">
+            <input id="searchInput" class="form-control me-2" type="search" placeholder="Search menu items..." aria-label="Search" oninput="searchItems()">
+            <button class="btn btn-success" type="submit" onclick="searchItems()">Search</button>
+        </form> 
+    </div>
+
+    <!-- Featured Menu Items Section -->
+    <section class="container mt-4">
+        <h2 class="text-center mb-4">Featured Menu Items</h2>
+        <div class="row" id="menuItems">
+            <div class="col-md-4 menu-item" data-name="French Fries">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/french-fries.jpg" class="card-img-top img-fluid" alt="Crispy golden French fries served with a side of ketchup">
+                        <div class="card-body">
+                            <h5 class="card-title">French Fries</h5>
+                            <p class="card-text">Crispy golden fries served with a side of ketchup.</p>
+                            <p class="card-text"><strong>Price: $3.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('French Fries')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('French Fries' ,3.99)">Add to Cart ($3.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+    
+            <div class="col-md-4 menu-item" data-name="Tandoori Dal">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/tanduri-dal.jpg" class="card-img-top img-fluid" alt="Rich lentil dish cooked in a traditional tandoor">
+                        <div class="card-body">
+                            <h5 class="card-title">Tandoori Dal</h5>
+                            <p class="card-text">Rich lentil dish cooked in a traditional tandoor.</p>
+                            <p class="card-text"><strong>Price: $8.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Tandoori Dal')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Tandoori Dal' ,8.99)">Add to Cart ($8.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+    
+            <div class="col-md-4 menu-item" data-name="Indian-Thali">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/indian-thali.jpg" class="card-img-top img-fluid" alt="A complete meal with various Indian dishes served on a platter">
+                        <div class="card-body">
+                            <h5 class="card-title">Indian Thali</h5>
+                            <p class="card-text">A complete meal with various Indian dishes served on a platter.</p>
+                            <p class="card-text"><strong>Price: $12.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Indian Thali')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Indian Thali' ,12.99)">Add to Cart ($12.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Additional Menu Items -->
+            <div class="col-md-4 menu-item" data-name="Paneer Rice">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/panir-rice.jpg" class="card-img-top img-fluid" alt="Spicy paneer curry served with rice">
+                        <div class="card-body">
+                            <h5 class="card-title">Paneer Rice</h5>
+                            <p class="card-text">Spicy paneer curry served with rice.</p>
+                            <p class="card-text"><strong>Price: $10.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Chicken Curry')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Chicken Curry' ,10.99)">Add to Cart ($10.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 menu-item" data-name="Garlic Naan">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/naan.jpg" class="card-img-top img-fluid" alt="Soft garlic naan bread">
+                        <div class="card-body">
+                            <h5 class="card-title">Garlic Naan</h5>
+                            <p class="card-text">Soft garlic naan bread, perfect for dipping.</p>
+                            <p class="card-text"><strong>Price: $2.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Garlic Naan')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Garlic Naan' ,2.99)">Add to Cart ($2.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 menu-item" data-name="Vegetable Biryani">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/v-biryani.jpg" class="card-img-top img-fluid" alt="Fragrant vegetable biryani with spices">
+                        <div class="card-body">
+                            <h5 class="card-title">Vegetable Biryani</h5>
+                            <p class="card-text">Fragrant vegetable biryani cooked with spices.</p>
+                            <p class="card-text"><strong>Price: $9.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Vegetable Biryani')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Vegetable Biryani' ,9.99)">Add to Cart ($9.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Chicken Biryani">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/n-biryani.jpg" class="card-img-top img-fluid" alt="Fragrant  chicken biryani with spices">
+                        <div class="card-body">
+                            <h5 class="card-title">Chicken Biryani</h5>
+                            <p class="card-text">Fragrant chicken biryani cooked with spices.</p>
+                            <p class="card-text"><strong>Price: $12.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Chicken Biryani')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Chicken Biryani' ,12.99)">Add to Cart ($12.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Egg Biryani">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/anda-biryani.jpg" class="card-img-top img-fluid" alt="Fragrant egg biryani with spices">
+                        <div class="card-body">
+                            <h5 class="card-title">Egg Biryani</h5>
+                            <p class="card-text">Fragrant egg biryani cooked with spices.</p>
+                            <p class="card-text"><strong>Price: $11.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Egg Biryani')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Egg Biryani' ,11.99)">Add to Cart ($11.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Finger Chips">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/finger-chips.jpg" class="card-img-top img-fluid" alt="Crispy finger chips">
+                        <div class="card-body">
+                            <h5 class="card-title">Finger Chips</h5>
+                            <p class="card-text">Crispy finger chips served with a dip.</p>
+                            <p class="card-text"><strong>Price: $4.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Finger Chips')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Finger Chips' ,4.99)">Add to Cart ($4.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Veg Pizza">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/pizza-v.jpg" class="card-img-top img-fluid" alt="Delicious vegetarian pizza">
+                        <div class="card-body">
+                            <h5 class="card-title">Veg Pizza</h5>
+                            <p class="card-text">Delicious vegetarian pizza with fresh toppings.</p>
+                            <p class="card-text"><strong>Price: $9.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Veg Pizza')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Veg Pizza' ,9.99)">Add to Cart ($9.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Egg Pizza">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/pizza-a.jpg" class="card-img-top img-fluid" alt="Egg pizza topped with eggs and cheese">
+                        <div class="card-body">
+                            <h5 class="card-title">Egg Pizza</h5>
+                            <p class="card-text">Egg pizza topped with fresh eggs and cheese.</p>
+                            <p class="card-text"><strong>Price: $10.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Egg Pizza')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Egg Pizza' ,10.99)">Add to Cart ($10.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Salad">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/salad.jpg" class="card-img-top img-fluid" alt="Fresh garden salad">
+                        <div class="card-body">
+                            <h5 class="card-title">Salad</h5>
+                            <p class="card-text">Fresh garden salad with seasonal vegetables.</p>
+                            <p class="card-text"><strong>Price: $5.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Salad')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Salad' ,5.99)">Add to Cart ($5.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Panipuri">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/pani-puri.jpg" class="card-img-top img-fluid" alt="Crispy panipuri served with spicy water">
+                        <div class="card-body">
+                            <h5 class="card-title">Panipuri</h5>
+                            <p class="card-text">Crispy panipuri served with spicy water.</p>
+                            <p class="card-text"><strong>Price: $4.50</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Panipuri')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Panipuri' ,4.50)">Add to Cart ($4.50)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Idli Sambar">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/idli.jpg" class="card-img-top img-fluid" alt="Soft idli with sambhar">
+                        <div class="card-body">
+                            <h5 class="card-title">Idli Sambar</h5>
+                            <p class="card-text">Soft idli served with flavorful sambar.</p>
+                            <p class="card-text"><strong>Price: $7.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Idli Sambar')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Idli Sambar' ,7.99)">Add to Cart ($7.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Dosa with Chutney">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/dosa.jpg" class="card-img-top img-fluid" alt="Crispy dosa with chutney">
+                        <div class="card-body">
+                            <h5 class="card-title">Dosa with Chutney</h5>
+                            <p class="card-text">Crispy dosa served with coconut chutney.</p>
+                            <p class="card-text"><strong>Price: $6.50</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Dosa with Chutney')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Dosa with Chutney' ,6.50)">Add to Cart ( $6.50)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Cake">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/cake.jpg" class="card-img-top img-fluid" alt="Delicious chocolate cake">
+                        <div class="card-body">
+                            <h5 class="card-title">Cake</h5>
+                            <p class="card-text">Delicious chocolate cake for dessert.</p>
+                            <p class="card-text"><strong>Price: $3.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Cake')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Cake' ,3.99)">Add to Cart ($3.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Pastry">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/pastry.jpg" class="card-img-top img-fluid" alt="Fresh pastry">
+                        <div class="card-body">
+                            <h5 class="card-title">Pastry</h5>
+                            <p class="card-text">Fresh pastry with sweet filling.</p>
+                            <p class="card-text"><strong>Price: $2.50</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Pastry')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Pastry' ,2.50)">Add to Cart ($2.50)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 menu-item" data-name="Aloo Paratha">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/aalu paratha.jpg" class="card-img-top img-fluid" alt="Stuffed aloo paratha">
+                        <div class="card-body">
+                            <h5 class="card-title">Aloo Paratha</h5>
+                            <p class="card-text">Stuffed aloo paratha served with yogurt.</p>
+                            <p class="card-text"><strong>Price: $5.50</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Aloo Paratha')" aria-label="Add Aloo Paratha to order">Add to Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Aloo Paratha' ,5.50)">Add to Cart ($5.50)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-md-4 menu-item" data-name="Matar Paneer">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/matar-paneer.jpg" class="card-img-top img-fluid" alt="Matar paneer curry">
+                        <div class="card-body">
+                            <h5 class="card-title">Matar Paneer</h5>
+                            <p class="card-text">Delicious matar paneer curry served with rice.</p>
+                            <p class="card-text"><strong>Price: $9.50</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Matar Paneer')" aria-label="Add Matar Paneer to order">Add to Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Matar Paneer' , 9.50)">Add to Cart ($9.50)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-md-4 menu-item" data-name="Paneer Tikka">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/paneer -ikka.jpg" class="card-img-top img-fluid" alt="Grilled paneer tikka">
+                        <div class="card-body">
+                            <h5 class="card-title">Paneer Tikka</h5>
+                            <p class="card-text">Grilled paneer tikka marinated in spices.</p>
+                            <p class="card-text"><strong>Price: $8.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Paneer Tikka')" aria-label="Add Paneer Tikka to order">Add to Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Paneer Tikka' , 8.99)">Add to Cart ($8.99)
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+
+            <!-- Daal Fries -->
+            <div class="col-md-4 menu-item" data-name="Daal Fries">
+                <a href="Order.html" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="img/daal frie.jpg" class="card-img-top img-fluid" alt="Crispy daal fries">
+                        <div class="card-body">
+                            <h5 class="card-title">Daal Fries</h5>
+                            <p class="card-text">Crispy fries made from lentils.</p>
+                            <p class="card-text"><strong>Price: $4.99</strong></p>
+                            <button class="btn btn-primary" onclick="orderItem('Daal Fries')">Order</button>
+                            <button class="btn btn-success" onclick="addToCart('Daal Fries' , 4.99)">Add to Cart ($4.99)</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Your Restaurant Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-oS3vA4mY5wEIsPbAi7RxwA8D9T4g3qfU3T7C1YzMQQ4nM/rEjR6ey3I0PQEt4D1D" crossorigin="anonymous"></script>
+    <script>
+        function orderItem(item) {
+            alert(item + ' has been added to your order!');
+        }
+        function orderItem(item) {
+            alert(item + ' has been added to your order!');
+        }
+
+        function searchItems() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const menuItems = document.querySelectorAll('.menu-item');
+
+            menuItems.forEach(item => {
+                const itemName = item.getAttribute('data-name').toLowerCase();
+                if (itemName.includes(input)) {
+                    item.style.display = ''; // Show the item
+                } else {
+                    item.style.display = 'none'; // Hide the item
+                }
+            });
+        }
+        function addToCart(name, price) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: name, price: price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} has been added to your cart.`);
+        }
+    </script>
+</body>
+</html>

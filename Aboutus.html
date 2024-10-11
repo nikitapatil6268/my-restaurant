@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+        }
+        .intro-section {
+            background: url('img/aboutus-bg.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 60px 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        .intro-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            border-radius: 10px;
+        }
+        .intro-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .intro-section p {
+            font-size: 1.25rem;
+            margin: 0.5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+            background-color: #343a40;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+        .team-member {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .testimonial-card {
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: transform 0.3s;
+            margin-bottom: 1rem;
+        }
+        blockquote {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-left: 5px solid #343a40;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .blockquote-footer {
+            margin-top: 0.5rem;
+        }
+        .img-fluid {
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Introduction Section -->
+    <div class="intro-section">
+        <a href="index.html" class="back-button">Back</a>
+        <h1>About Us</h1>
+        <p>Experience Culinary Excellence</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="section">
+            <h2>Our Mission</h2>
+            <img src="your-mission-image-url.jpg" alt="Our Mission" class="img-fluid">
+            <p>At Our Restaurant, we believe dining is not just about food; it's about creating unforgettable memories. Our mission is to craft exceptional dishes using the freshest ingredients while providing a warm and welcoming atmosphere for everyone.</p>
+        </section>
+
+        <section class="section">
+            <h2>Our History</h2>
+            <img src="your-history-image-url.jpg" alt="Our History" class="img-fluid">
+            <p>Founded in 2020, Our Restaurant began as a small family venture fueled by our love for cooking and community. As we grew, we stayed true to our roots, blending tradition with innovation, establishing ourselves as a cherished local gem known for our unique flavors and outstanding service.</p>
+        </section>
+
+        <section class="section">
+            <h2>Our Values</h2>
+            <img src="your-values-image-url.jpg" alt="Our Values" class="img-fluid">
+            <p>We are committed to:</p>
+            <ul>
+                <li>Quality: Only the freshest ingredients make it to our kitchen.</li>
+                <li>Community: We strive to support local farms and businesses.</li>
+                <li>Customer Experience: Your satisfaction is our priority.</li>
+                <li>Sustainability: We practice environmentally-friendly methods in our operations.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Awards</h2>
+            <img src="your-awards-image-url.jpg" alt="Awards" class="img-fluid">
+            <p>We are proud to have received numerous accolades:</p>
+            <ul>
+                <li>Best New Restaurant 2021 - Local Food Awards</li>
+                <li>Excellence in Dining - Gourmet Magazine</li>
+                <li>Top 10 Restaurants in Flavor Town - Foodie Guide</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Community Involvement</h2>
+            <img src="your-community-image-url.jpg" alt="Community Involvement" class="img-fluid">
+            <p>We believe in giving back to the community. Our initiatives include:</p>
+            <ul>
+                <li>Monthly food drives to support local shelters.</li>
+                <li>Cooking workshops for local youth to promote healthy eating.</li>
+                <li>Collaboration with local charities for fundraising events.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="text-center mb-4">Meet Our Team</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card team-member">
+                        <img src="team-member-1.jpg" class="card-img-top" alt="John Doe">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">John Doe</h5>
+                            <p class="card-text">Head Chef - Passionate about creating delicious and innovative dishes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card team-member">
+                        <img src="team-member-2.jpg" class="card-img-top" alt="Jane Smith">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Jane Smith</h5>
+                            <p class="card-text">Manager - Dedicated to ensuring every guest has a wonderful experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card team-member">
+                        <img src="team-member-3.jpg" class="card-img-top" alt="Emily Johnson">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Emily Johnson</h5>
+                            <p class="card-text">Sommelier - Expert in pairing wines with our exquisite menu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container mt-4">
+            <h2 class="text-center mb-4">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">"The food is absolutely amazing! I can't wait to come back. Each dish was a burst of flavor, from the appetizers to the desserts. The ambiance was cozy, and the staff was incredibly friendly. This place has truly become my favorite spot!"</p>
+                            <footer class="blockquote-footer">Maria Jorz</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">"An unforgettable dining experience! Highly recommend the seafood pasta; it was cooked to perfection. The wine selection complemented our meal wonderfully. I left feeling satisfied and excited to return."</p>
+                            <footer class="blockquote-footer">Anamika Mishra</footer>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">"Every dish was full of flavor and beautifully presented. The attention to detail is remarkable. The staff took the time to explain each dish, making our experience even more enjoyable. Can't recommend this place enough!"</p>
+                            <footer class="blockquote-footer">Rahul Raj</footer>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">"Best restaurant in town! From the moment we walked in, we were treated like royalty. The dessert selection was to die for! Can't wait to return with more friends to share this hidden gem."</p>
+                            <footer class="blockquote-footer">Amayara Soni</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <p class="text-center">If you have any questions or would like to make a reservation, please contact us!</p>
+            <ul class="list-unstyled text-center">
+                <li>Email: <a href="mailto:info@ourrestaurant.com">info@ourrestaurant.com</a></li>
+                <li>Phone: (123) 456-7890</li>
+                <li>Address: 123 Foodie Lane, Flavor Town, CA</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Our Restaurant. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
